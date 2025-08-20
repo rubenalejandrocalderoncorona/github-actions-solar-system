@@ -47,6 +47,9 @@ jobs:
           uses: actions/setup-node@v4
           with:
             node-version: 18
+        
+        - name: Install Dependecies
+          run: npm install
 
         - name: Run-Code coverage command
           run: npm run code-coverage
