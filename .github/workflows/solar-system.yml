@@ -81,7 +81,7 @@ jobs:
         run: |
           echo "repo=$(echo '${{ github.repository_owner }}' | re '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
       - name: Build and push Docker image
-        uses: docker/build-push-actions@v6
+        uses: docker/build-push-action@v6
         with:
           context: .
           push: true
@@ -95,7 +95,7 @@ jobs:
         name: development
       steps:
         - name: install cluster
-          uses: helm/kind-actions@v1
+          uses: helm/kind-action@v1
         - run: |
             sleep 60
             kubectl -n kube-system get pod
